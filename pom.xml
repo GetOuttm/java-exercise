@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.exercise</groupId>
+    <artifactId>java-exercise</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
+
+    <modules>
+        <module>basics-exercise</module>
+        <module>spring-exercise</module>
+        <module>springmvc-exercise</module>
+        <module>mybatis-exercise</module>
+        <module>springboot-exercise</module>
+        <module>nosql-exercise</module>
+        <module>springcloud-exercise</module>
+        <module>jvm-exercise</module>
+        <module>tomcat-exercise</module>
+        <module>mq-exercise</module>
+        <module>elasticsearch-exercise</module>
+        <module>netty-exercise</module>
+        <module>dubbo-exercise</module>
+        <module>zookeeper-exercise</module>
+        <module>utils-exercise</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+<!--    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-->
+
+</project>
