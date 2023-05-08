@@ -10,16 +10,50 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>mq-exercise</artifactId>
+    <description>mq练习、源码</description>
+
     <packaging>pom</packaging>
+
     <modules>
         <module>rocketmq-exercise</module>
         <module>activemq-exercise</module>
         <module>kafka-exercise</module>
     </modules>
 
+    <!-- 版本管理 -->
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <spring.boot.version>2.6.5</spring.boot.version>
+        <spring.boot.maven.plugin.version>2.6.5</spring.boot.maven.plugin.version>
     </properties>
+    <!-- 核心依赖   -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
+        <build>
+            <plugins>
+                <!-- 配置打包插件 -->
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring.boot.maven.plugin.version}</version>
+                    <configuration>
+                        <fork>true</fork>
+                        <addResources>true</addResources>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </build>
 </project>

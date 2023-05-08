@@ -10,15 +10,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>nosql-exercise</artifactId>
+    <description>nosql练习、源码</description>
+
     <packaging>pom</packaging>
+
     <modules>
         <module>redis-exercise</module>
         <module>memcached-exercise</module>
     </modules>
-
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
 
 </project>

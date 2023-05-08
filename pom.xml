@@ -27,10 +27,4 @@
         <module>utils-exercise</module>
     </modules>
 
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
-<!--    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-->
-
 </project>
