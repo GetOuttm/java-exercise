@@ -42,18 +42,18 @@
         </dependencies>
     </dependencyManagement>
 
-        <build>
-            <plugins>
-                <!-- 配置打包插件 -->
-                <plugin>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>${spring.boot.maven.plugin.version}</version>
-                    <configuration>
-                        <fork>true</fork>
-                        <addResources>true</addResources>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </build>
+    <build>
+        <plugins>
+            <!-- 配置打包插件 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.maven.plugin.version}</version>
+                <configuration>
+                    <fork>true</fork>
+                    <addResources>true</addResources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
