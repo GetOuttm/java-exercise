@@ -108,6 +108,14 @@ public class App {
             @Override
             public void process(WatchedEvent watchedEvent) {
                 System.out.println("getData watch:" + watchedEvent.toString());
+                try {
+                    //true default watch 被重新注册  new zk的watch
+                    zk.getData("/ooxx", true,stat);
+                } catch (KeeperException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }, stat);
         System.out.println(new String(data));
@@ -115,5 +123,20 @@ public class App {
         //出发回调
         Stat stat1 = zk.setData("/ooxx", "newData".getBytes(), 0);
         Stat stat2 = zk.setData("/ooxx", "newData01".getBytes(), stat1.getVersion());
+
+
+        System.out.println("-----------async start--------------");
+        zk.getData("/ooxx",false,new AsyncCallback.DataCallback() {
+
+            @Override
+            public void processResult(int i, String s, Object o, byte[] bytes, Stat stat) {
+                System.out.println("-----------async call back--------------");
+                System.out.println(new String(bytes));
+            }
+        },"abc");
+        System.out.println("-----------async over--------------");
+
+
+        Thread.sleep(2222222);
     }
 }
