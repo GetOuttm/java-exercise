@@ -123,7 +123,6 @@ public class App {
         Stat stat1 = zk.setData("/ooxx", "newData".getBytes(), 0);
         Stat stat2 = zk.setData("/ooxx", "newData01".getBytes(), stat1.getVersion());
 
-
         System.out.println("-----------async start--------------");
         zk.getData("/ooxx", false, new AsyncCallback.DataCallback() {
 
@@ -134,7 +133,6 @@ public class App {
             }
         }, "abc");
         System.out.println("-----------async over--------------");
-
 
         Thread.sleep(2222222);
     }

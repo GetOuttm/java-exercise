@@ -1,10 +1,6 @@
 package org.exercise.config;
 
-import org.apache.zookeeper.AsyncCallback;
-import org.apache.zookeeper.WatchedEvent;
-import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
-import org.apache.zookeeper.data.Stat;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,7 +21,6 @@ public class TestConfig {
         zooKeeper = ZKUtils.getZookeeper();
     }
 
-
     @After
     public void close() {
         try {
@@ -37,10 +32,29 @@ public class TestConfig {
 
     @Test
     public void getConf() {
-
         WatchCallBack watchCallBack = new WatchCallBack();
         watchCallBack.setZooKeeper(zooKeeper);
+        MyConf myConf = new MyConf();
+        watchCallBack.setMyConf(myConf);
 
-        zooKeeper.exists("/AppConf", watchCallBack.watch,"ABC");
+        watchCallBack.aWait();
+        //可能性：
+        //1、节点不存在
+        //2、节点存在
+
+        while (true) {
+            if (myConf.getConf().equals("")) {
+                System.out.println("conf 被删除 。。。。");
+                watchCallBack.aWait();
+            } else {
+                System.out.println(myConf.getConf());
+            }
+
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
