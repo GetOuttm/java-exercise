@@ -3,7 +3,6 @@ package org.exercise;
 import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.Stat;
 
-import java.io.IOException;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -110,7 +109,7 @@ public class App {
                 System.out.println("getData watch:" + watchedEvent.toString());
                 try {
                     //true default watch 被重新注册  new zk的watch
-                    zk.getData("/ooxx", true,stat);
+                    zk.getData("/ooxx", true, stat);
                 } catch (KeeperException e) {
                     e.printStackTrace();
                 } catch (InterruptedException e) {
@@ -126,14 +125,14 @@ public class App {
 
 
         System.out.println("-----------async start--------------");
-        zk.getData("/ooxx",false,new AsyncCallback.DataCallback() {
+        zk.getData("/ooxx", false, new AsyncCallback.DataCallback() {
 
             @Override
             public void processResult(int i, String s, Object o, byte[] bytes, Stat stat) {
                 System.out.println("-----------async call back--------------");
                 System.out.println(new String(bytes));
             }
-        },"abc");
+        }, "abc");
         System.out.println("-----------async over--------------");
 
 
