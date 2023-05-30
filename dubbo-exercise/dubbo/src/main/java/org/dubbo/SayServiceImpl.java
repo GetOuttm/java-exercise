@@ -1,5 +1,7 @@
 package org.dubbo;
 
+import java.rmi.RemoteException;
+
 /**
  * @NAME: SayService
  * @USER: ljf
@@ -8,8 +10,7 @@ package org.dubbo;
  **/
 public class SayServiceImpl implements ISayService {
 
-    @Override
-    public String say(String name) {
+    public String say(String name) throws RemoteException {
         System.out.println(name + " say hello!");
         return name + " say hello!";
     }

@@ -1,6 +1,7 @@
 package org.dubbo;
 
 import java.rmi.Remote;
+import java.rmi.RemoteException;
 
 /**
  * @NAME: ISayService
@@ -10,5 +11,5 @@ import java.rmi.Remote;
  **/
 public interface ISayService extends Remote {
 
-    String say(String name);
+    String say(String name) throws RemoteException;;
 }

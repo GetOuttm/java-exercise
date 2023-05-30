@@ -13,12 +13,14 @@ public class CustomerMain {
 
     public static void main(String[] args) throws Exception {
         //实例化注册中心
-        Registry registry = LocateRegistry.createRegistry(999);
+        Registry registry = LocateRegistry.getRegistry();
         //服务发现
-        ISayService sayService = (ISayService)registry.lookup("remote");
+        ISayService sayService = (ISayService) registry.lookup("remote");
 
         //调服务
         String str = sayService.say("小小");
         System.out.println(str);
+
+        //https://www.jianshu.com/p/b19b31cd02cc
     }
 }
