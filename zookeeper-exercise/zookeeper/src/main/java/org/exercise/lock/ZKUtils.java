@@ -16,7 +16,7 @@ public class ZKUtils {
 
     private static ZooKeeper zookeeper;
 
-    //节点需要人工创建  create /testConf ""   创建子节点然后删除测试
+    //节点需要人工创建  create /testLock ""   创建子节点然后删除测试
     private static String address = "172.28.27.153:2181/testLock";
 
     private static DefaultWatch watch = new DefaultWatch();
