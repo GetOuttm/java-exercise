@@ -10,6 +10,7 @@ import java.rmi.RemoteException;
  **/
 public class SayServiceImpl implements ISayService {
 
+    @Override
     public String say(String name) throws RemoteException {
         System.out.println(name + " say hello!");
         return name + " say hello!";
