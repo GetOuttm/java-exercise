@@ -33,6 +33,10 @@ public class T04_ThreadState {
         }
 
         System.out.println(t.getState());
-
     }
+
+    //NEW - RUNABLE(Ready-Running) - Teminated
+    //        TimedWaiting
+    //        Waiting
+    //        Blocked
 }
