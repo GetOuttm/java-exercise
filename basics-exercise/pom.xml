@@ -14,6 +14,7 @@
     <description>java基础练习、源码</description>
     <modules>
         <module>basics</module>
+        <module>arithmetic</module>
     </modules>
 
     <!-- 版本管理 -->
