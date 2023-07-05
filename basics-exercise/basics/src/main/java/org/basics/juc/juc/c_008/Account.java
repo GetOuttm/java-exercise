@@ -24,14 +24,12 @@ public class Account {
 			e.printStackTrace();
 		}
 
-		
 		this.balance = balance;
 	}
 	
 	public /*synchronized*/ double getBalance(String name) {
 		return this.balance;
 	}
-	
 	
 	public static void main(String[] args) {
 		Account a = new Account();
